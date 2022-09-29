@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "./components/layout/layout";
+import { Route, Routes } from "react-router-dom";
+import HotelsList from "./components/hotelsList/hotelsList";
+import { createTheme, ThemeProvider } from "@mui/material";
+import Hotel from "./components/hotel/hotel";
+import Manage from "./components/manage/manage";
+import Rooms from "./components/rooms/rooms";
+
+const theme = createTheme();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HotelsList />} />
+          <Route path="/hotels" element={<HotelsList />} />
+          <Route path="/hotels/:id" element={<Hotel />} />
+          <Route path="/manage" element={<Manage />} />
+          <Route path="/rooms/:id" element={<Rooms />} />
+        </Routes>
+      </Layout>
+    </ThemeProvider>
   );
 }
 
