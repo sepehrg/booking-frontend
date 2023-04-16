@@ -1,5 +1,19 @@
 ARO challenge
 
+Features:
+List of hotels page
+Hotels detail page
+Updating hotel information
+Updating room information
+
+Frontend:
+Material UI
+Styled components
+axios
+React bootstrap – for carosel
+Responsive design
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
